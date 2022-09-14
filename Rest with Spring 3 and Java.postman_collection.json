@@ -125,6 +125,126 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "08",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Tulio\",\r\n    \"lastName\": \"Olivieri\",\r\n    \"address\": \"Regente Feijó\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"firstName\": \"Tulio\",\r\n    \"lastName\": \"Olivieri\",\r\n    \"address\": \"Regente Feijó - SP\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
