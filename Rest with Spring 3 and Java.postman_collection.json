@@ -252,7 +252,13 @@
 					"name": "Find All",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/x-yaml",
+								"type": "default"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/person",
 							"protocol": "http",
@@ -274,7 +280,7 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/xml",
+								"value": "application/x-yaml",
 								"type": "default"
 							}
 						],
@@ -317,13 +323,24 @@
 					"name": "Create",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/x-yaml",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-yaml",
+								"type": "default"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Tulio\",\r\n    \"lastName\": \"Olivieri\",\r\n    \"address\": \"Regente Feijó\",\r\n    \"gender\": \"Male\"\r\n}",
+							"raw": "---\r\naddress: \"Klushino - URSS\"\r\ngender: \"Male\"\r\nfirst_name: \"Yuri\"\r\nlast_name: \"Gagarin\"",
 							"options": {
 								"raw": {
-									"language": "json"
+									"language": "text"
 								}
 							}
 						},
