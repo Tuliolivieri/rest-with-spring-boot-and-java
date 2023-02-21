@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.tuliolivieri.controllers.PersonController;
 import br.com.tuliolivieri.data.vo.v1.PersonVO;
+import br.com.tuliolivieri.exceptions.RequiredObjectIsNullException;
 import br.com.tuliolivieri.exceptions.ResourceNotFoundException;
 import br.com.tuliolivieri.mapper.DozerMapper;
 import br.com.tuliolivieri.models.Person;
@@ -47,6 +48,8 @@ public class PersonService {
 	}
 	
 	public PersonVO create(PersonVO person) {
+		if(person == null) throw new RequiredObjectIsNullException();
+		
 		logger.info("Creating person...");
 		
 		var entity = DozerMapper.parseObject(person, Person.class);
@@ -57,6 +60,8 @@ public class PersonService {
 	}
 	
 	public PersonVO update(PersonVO person) {
+		if(person == null) throw new RequiredObjectIsNullException();
+		
 		logger.info("Updating person...");
 		
 		Person entity = repository.findById(person.getKey())

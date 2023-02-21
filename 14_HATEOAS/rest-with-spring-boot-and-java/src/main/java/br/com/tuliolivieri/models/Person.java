@@ -111,11 +111,4 @@ public class Person  implements Serializable{
 				&& Objects.equals(gender, other.gender) && Objects.equals(id, other.id)
 				&& Objects.equals(lastName, other.lastName);
 	}
-
-
-	@Override
-	public String toString() {
-		return "PersonController [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
-				+ address + ", gender=" + gender + "]";
-	}
 }
