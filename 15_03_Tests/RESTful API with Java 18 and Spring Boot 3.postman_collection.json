@@ -1,0 +1,2150 @@
+{
+	"info": {
+		"_postman_id": "073ae144-332d-41ec-bdc1-92cf14756d64",
+		"name": "RESTful API with Java 18 and Spring Boot 3",
+		"description": "Some description about API...",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14620969"
+	},
+	"item": [
+		{
+			"name": "person/v1",
+			"item": [
+				{
+					"name": "Find all People",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/person/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"v1"
+							]
+						},
+						"description": "Find all people"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 80599922,\n    \"first_name\": \"exercitation sed\",\n    \"last_name\": \"sunt fugiat aute eiusmod aliqua\",\n    \"gender\": \"sint deserunt\",\n    \"address\": \"enim\",\n    \"_links\": {\n      \"ex_48\": {\n        \"href\": \"esse nisi\",\n        \"hreflang\": \"nisi dolo\",\n        \"title\": \"mollit occaecat sit\",\n        \"type\": \"Ut cupidatat velit\",\n        \"deprecation\": \"est quis ea in\",\n        \"profile\": \"Duis nisi dolor ut\",\n        \"name\": \"dolor\",\n        \"templated\": false\n      }\n    }\n  },\n  {\n    \"id\": -73145913,\n    \"first_name\": \"elit\",\n    \"last_name\": \"in consectetur quis\",\n    \"gender\": \"reprehenderit\",\n    \"address\": \"sint aliqua amet non\",\n    \"_links\": {\n      \"eu4b\": {\n        \"href\": \"cillum incididunt aliquip\",\n        \"hreflang\": \"Lorem magna\",\n        \"title\": \"deserunt\",\n        \"type\": \"ut laboris\",\n        \"deprecation\": \"ad do ullamco culpa\",\n        \"profile\": \"sint proident\",\n        \"name\": \"consequat occaecat\",\n        \"templated\": true\n      }\n    }\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Updates a Person",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/person/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"v1"
+							]
+						},
+						"description": "Updates a Person"
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create a new Person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/person/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"v1"
+							]
+						},
+						"description": "Create a new Person"
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Find a Person",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/person/v1/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"v1",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "-73022417",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Find a Person by Id"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -2103190,\n  \"first_name\": \"incididunt\",\n  \"last_name\": \"nulla \",\n  \"gender\": \"aute ullamco Excepteur\",\n  \"address\": \"Lorem\",\n  \"_links\": {\n    \"velit_9\": {\n      \"href\": \"dolore\",\n      \"hreflang\": \"Excepteur dolore aliqu\",\n      \"title\": \"consectetur\",\n      \"type\": \"deserunt nostrud\",\n      \"deprecation\": \"adipisicing\",\n      \"profile\": \"est\",\n      \"name\": \"do proident\",\n      \"templated\": false\n    }\n  }\n}"
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Deletes a Person",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/person/v1/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"v1",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "-73022417",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Deletes a Person"
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "book/v1",
+			"item": [
+				{
+					"name": "Find all Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/book/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"v1"
+							]
+						},
+						"description": "Find all books"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": -76995581,\n    \"title\": \"reprehenderit esse exercitation Lorem\",\n    \"author\": \"do esse minim aliqua\",\n    \"price\": 35683332.324368745,\n    \"launch_date\": \"1998-04-18T03:23:30.208Z\",\n    \"_links\": {\n      \"nisi6\": {\n        \"href\": \"proident enim dolor cillum\",\n        \"hreflang\": \"eu laborum aliqua\",\n        \"title\": \"do\",\n        \"type\": \"Excepteur\",\n        \"deprecation\": \"veniam dolor sed ipsum\",\n        \"profile\": \"adipisicing deserunt\",\n        \"name\": \"id ipsum sint\",\n        \"templated\": false\n      },\n      \"sede\": {\n        \"href\": \"qui incididunt nulla\",\n        \"hreflang\": \"pariatur\",\n        \"title\": \"en\",\n        \"type\": \"exercitation esse\",\n        \"deprecation\": \"labori\",\n        \"profile\": \"laboris\",\n        \"name\": \"dolore laborum cillum\",\n        \"templated\": true\n      }\n    }\n  },\n  {\n    \"id\": 7776361,\n    \"title\": \"occaecat anim id\",\n    \"author\": \"Excepteur ex non\",\n    \"price\": 10330067.46691601,\n    \"launch_date\": \"1999-06-08T20:07:50.820Z\",\n    \"_links\": {\n      \"culpa_51f\": {\n        \"href\": \"in\",\n        \"hreflang\": \"voluptate anim\",\n        \"title\": \"proident tempor officia\",\n        \"type\": \"Ut reprehenderit nostrud\",\n        \"deprecation\": \"esse do quis\",\n        \"profile\": \"reprehenderit\",\n        \"name\": \"ut\",\n        \"templated\": false\n      },\n      \"dolor7c4\": {\n        \"href\": \"irure exercitation ea deserunt\",\n        \"hreflang\": \"veniam occaecat laborum exerc\",\n        \"title\": \"velit culpa proident\",\n        \"type\": \"amet tempor consectetur\",\n        \"deprecation\": \"labore in \",\n        \"profile\": \"ea eiusmod cupidatat consectetur\",\n        \"name\": \"nulla\",\n        \"templated\": true\n      }\n    }\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Updates a Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/book/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"v1"
+							]
+						},
+						"description": "Updates a book"
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create a new Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/book/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"v1"
+							]
+						},
+						"description": "Create a new book"
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Find a Book",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/book/v1/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"v1",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "-73022417",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Find a book by Id"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -93657865,\n  \"title\": \"quis est\",\n  \"author\": \"Ut non\",\n  \"price\": -80260048.47794788,\n  \"launch_date\": \"1997-12-25T20:09:58.001Z\",\n  \"_links\": {\n    \"veniam_b8\": {\n      \"href\": \"ut aliquip laboris\",\n      \"hreflang\": \"proident et in ipsum ut\",\n      \"title\": \"incidi\",\n      \"type\": \"laboris ipsum ex\",\n      \"deprecation\": \"enim eiusmod\",\n      \"profile\": \"enim non ut\",\n      \"name\": \"laboris tempor dolore\",\n      \"templated\": true\n    },\n    \"qui2\": {\n      \"href\": \"Excepteur\",\n      \"hreflang\": \"pariatur dolor\",\n      \"title\": \"deserunt\",\n      \"type\": \"veniam dolor adipisicing ullamco\",\n      \"deprecation\": \"esse consectetur Excepteur adipisicing nulla\",\n      \"profile\": \"ea occaecat exercitation anim\",\n      \"name\": \"reprehenderit nisi proident mollit aliqua\",\n      \"templated\": true\n    },\n    \"autef4d\": {\n      \"href\": \"pariatur sint ut magna enim\",\n      \"hreflang\": \"ut consectetur cillum\",\n      \"title\": \"enim veniam\",\n      \"type\": \"culpa do aliquip\",\n      \"deprecation\": \"aliquip Excepteur\",\n      \"profile\": \"nostrud et consequat dolor ut\",\n      \"name\": \"nisi ullamco cillum\",\n      \"templated\": false\n    },\n    \"suntbaa\": {\n      \"href\": \"nostrud in ex\",\n      \"hreflang\": \"sunt\",\n      \"title\": \"laborum\",\n      \"type\": \"ipsum nisi\",\n      \"deprecation\": \"occaecat non velit voluptate\",\n      \"profile\": \"magna laboris commodo\",\n      \"name\": \"et fugiat Ut\",\n      \"templated\": true\n    }\n  }\n}"
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Deletes a Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/book/v1/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"v1",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "-73022417",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Deletes a book"
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/book/v1/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"book",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-73022417",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
